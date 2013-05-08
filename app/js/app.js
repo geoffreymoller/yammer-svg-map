@@ -11,4 +11,10 @@ $(function() {
   var controls = new Controls();
   $('#container').append(controls.render().el);
 
+  $('body').on('keyup', function(e){
+    if(e.keyCode === 191){
+      header.trigger('focus');
+    }
+  });
+
 });

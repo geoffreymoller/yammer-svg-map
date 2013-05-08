@@ -6,6 +6,12 @@ var Header = Backbone.View.extend({
     "keyup .navbar-search input[type=text]": "onKeyUp"
   },
 
+  initialize: function() {
+    this.on('focus', function(){
+      this.$searchInput.focus();
+    });
+  },
+
   onKeyUp: function(e) {
 
     // esc
@@ -42,7 +48,7 @@ var Header = Backbone.View.extend({
           <div class="nav-collapse collapse">\
             <div style="display: inline-block;" class="pull-right">\
               <form class="navbar-search pull-right">\
-                <input type="text" class="search-query" placeholder="Search">\
+                <input type="text" class="search-query" placeholder="Search" autofocus>\
               </form>\
             </div>\
           </div>\
